@@ -12,5 +12,5 @@ Train and evaluate the model with the following commands.
 You can also add command parameters to specify dataset/epoch, or set neg-sampling rate.
 
 ```shell
-python src/run_simple.py --config src/config/xyz.cfg
+python src/run.py --config src/config/xyz.cfg
 ```
