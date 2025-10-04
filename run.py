@@ -182,13 +182,6 @@ def _train_epoch(flags_obj, epoch, model, dataloader, optimizer, device):
                 mask = mask.to(device)
                 timestamp = timestamp.to(device)
                 loss = model(user, item_p, item_n, mask, timestamp)
-            # else:  # 原始格式（不包含时间戳）
-            #     user, item_p, item_n, mask = sample
-            #     user = user.to(device)
-            #     item_p = item_p.to(device)
-            #     item_n = item_n.to(device)
-            #     mask = mask.to(device)
-            #     loss = model(user, item_p, item_n, mask)
 
         loss.backward()
         optimizer.step()
