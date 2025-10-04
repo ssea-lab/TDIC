@@ -12,9 +12,5 @@ Train and evaluate the model with the following commands.
 You can also add command parameters to specify dataset/epoch, or set neg-sampling rate.
 
 ```shell
-# set parameters in config.py 
-# --dataset: (str) dataset name
-# --epochs: (int) epoch numbers
-# --neg_sample_rate: (int) negative sample numbers
-python main.py
+python src/run_simple.py --config src/config/xyz.cfg
 ```
