@@ -14,3 +14,15 @@ You can also add command parameters to specify dataset/epoch, or set neg-samplin
 ```shell
 python src/run.py --config src/config/xyz.cfg
 ```
+## Citation
+If you use our codes in your research, please cite:
+```
+@INPROCEEDINGS{11169623,
+  author={Li, Qibo and Zhao, Yuqi and Ma, Yutao},
+  booktitle={2025 IEEE International Conference on Web Services (ICWS)}, 
+  title={TDIC: Time-Aware Disentanglement of Interest and Conformity in Mobile App Recommendations}, 
+  year={2025},
+  pages={1-10},
+  doi={10.1109/ICWS67624.2025.00011}}
+
+```
