@@ -124,6 +124,7 @@ class TDIC(nn.Module):
 
         p_score_total = p_score_int + p_score_pop
         n_score_total = n_score_int + n_score_pop
+        loss_match=self.bpr_loss(p_score_total,n_score_total)
 
         loss_int = self.mask_bpr_loss(p_score_int, n_score_int, mask)
         loss_pop = self.mask_bpr_loss(n_score_pop, p_score_pop, mask) + self.mask_bpr_loss(p_score_pop, n_score_pop, ~mask)
@@ -139,9 +140,9 @@ class TDIC(nn.Module):
         p_score_tdic = torch.tanh(pop_p) * p_score_total
         n_score_tdic = torch.tanh(pop_n) * n_score_total
 
-        loss_tdic = self.bpr_loss(p_score_tdic, n_score_tdic)
+        loss_tdic_pop = self.bpr_loss(p_score_tdic, n_score_tdic)
 
-        loss = self.int_weight * loss_int + self.pop_weight * loss_pop + self.tdic_weight * loss_tdic
+        loss = self.int_weight * loss_int + self.pop_weight * loss_tdic_pop + loss_match
 
         return loss
 
